@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!--
+================================================================
+  合同会社アトナサポート ブランドサイト デザイン案
+  単一ファイル構成（HTML / CSS / JavaScript すべてインライン）
+  Cloudflare Pages：このファイルを「index.html」のままフォルダに入れ、
+  Direct Upload（ドラッグ＆ドロップ）でデプロイできます。ビルド設定は不要です。
+
+  ■ コンセプト
+  社名の「アトナ」を「あと」と読み、ふたつの漢字を当てています。
+    後 … 経営者の前ではなく、後ろに立って支える
+    跡 … 支援が終わったあとに、事業の中に残るもの
+  ヒーローのアニメーション（先を行く線と、少し遅れてなぞる線）と、
+  右端のスクロールレール（先を行く点と、後ろからついていく点）はこの考えを表しています。
+
+  ■ 確認事項チェックリスト（公開前にご確認ください）
+  [ ] 社名「アトナ」の由来・意味（本案の「後／跡」は制作側の解釈です）
+  [ ] 英字表記「Atona Support」の正誤
+  [ ] 代表者の肩書き（合同会社のため「代表社員」としています）
+  [ ] 支援内容4項目の範囲・名称（事業内容「コンサル業」から想定したものです）
+  [ ] 主な支援対象（「中小企業・個人事業主」と想定しています）
+  [ ] 補助金・助成金の申請書類作成を代行する場合は行政書士法との関係を確認
+  [ ] 会社概要の未確認項目（設立年月日・資本金・電話番号など）※ソース内でコメントアウト中
+  [ ] 代表メッセージ本文（下書きです。必ずご本人の確認・修正を経て公開してください）
+  [ ] 実績・数値を追加する場合は景品表示法（有利誤認・優良誤認）に注意
+  [ ] 画像はUnsplashのフリー素材です。可能であれば自社撮影写真への差し替えを推奨
+  [ ] OGP画像・favicon の本番用素材
+================================================================
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>合同会社アトナサポート｜経営コンサルティング</title>
+<meta name="description" content="合同会社アトナサポートは、経営者の後ろに立ち、支援が終わったあとにも残る仕組みをつくる経営コンサルティング会社です。">
+<meta name="theme-color" content="#1d2733">
+<meta property="og:title" content="合同会社アトナサポート">
+<meta property="og:description" content="後ろに立ち、跡をのこす。経営コンサルティングの合同会社アトナサポート。">
+<meta property="og:type" content="website">
+<!-- 要確認：og:image と og:url は本番URL確定後に追加してください -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d2733'/%3E%3Ccircle cx='38' cy='26' r='7' fill='%23e4e6e0'/%3E%3Ccircle cx='26' cy='40' r='7' fill='%237fa7a3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Shippori+Mincho+B1:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#1d2733;        /* 墨藍：基調 */
+  --ink-2:#243140;
+  --ink-3:#31404f;
+  --paper:#dde1db;      /* 鈍色の紙 */
+  --paper-2:#e9ebe6;
+  --on-dark:#e4e6e0;
+  --on-dark-mute:#9aa3a8;
+  --on-light:#1f2830;
+  --on-light-mute:#56626a;
+  --trace:#7fa7a3;      /* 浅葱錆：跡の色 */
+  --trace-deep:#3e6d69;
+  --warm:#c3ae8c;
+  --serif:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+  --latin:"Cormorant Garamond","Times New Roman",serif;
+  --wrap:min(1120px, calc(100% - 3rem));
+  --header-h:72px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--header-h);-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--ink);color:var(--on-dark);
+  font-family:var(--sans);font-size:1rem;line-height:1.9;letter-spacing:.04em;
+  font-feature-settings:"palt" 1;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3,p,dl,dd,ol,ul,figure{margin:0}
+ol,ul{padding:0;list-style:none}
+p,h1,h2,h3,dd,li{word-break:auto-phrase;text-wrap:pretty}
+.nw{display:inline-block}
+.wrap{width:var(--wrap);margin-inline:auto}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+:focus-visible{outline:2px solid var(--trace);outline-offset:4px;border-radius:2px}
+.skip{position:absolute;left:1rem;top:-100px;z-index:200;background:var(--paper);color:var(--on-light);padding:.6rem 1rem;text-decoration:none}
+.skip:focus{top:1rem}
+
+/* ---------- Header ---------- */
+.site-header{
+  position:fixed;inset:0 0 auto 0;z-index:100;height:var(--header-h);
+  display:flex;align-items:center;
+  transition:background-color .4s ease, box-shadow .4s ease;
+}
+.site-header.is-scrolled{background:rgba(29,39,51,.94);box-shadow:0 1px 0 rgba(228,230,224,.08);backdrop-filter:blur(8px)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.brand{display:flex;flex-direction:column;text-decoration:none;line-height:1.2}
+.brand-ja{font-family:var(--serif);font-weight:500;font-size:1.05rem;letter-spacing:.14em}
+.brand-ja small{font-size:.72em;letter-spacing:.1em;margin-right:.4em;color:var(--on-dark-mute)}
+.brand-en{font-family:var(--latin);font-style:italic;font-size:.9rem;color:var(--on-dark-mute);letter-spacing:.06em}
+.gnav ul{display:flex;gap:2rem}
+.gnav a{text-decoration:none;font-size:.86rem;letter-spacing:.12em;padding:.4rem 0;position:relative}
+.gnav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--trace);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.gnav a:hover::after,.gnav a:focus-visible::after{transform:scaleX(1)}
+.menu-btn{display:none;background:none;border:0;color:inherit;width:44px;height:44px;cursor:pointer;position:relative}
+.menu-btn span{position:absolute;left:11px;right:11px;height:1px;background:currentColor;transition:transform .3s ease, opacity .3s ease}
+.menu-btn span:nth-child(1){top:17px}
+.menu-btn span:nth-child(2){top:26px;left:19px}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(4.5px) rotate(20deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){left:11px;transform:translateY(-4.5px) rotate(-20deg)}
+
+/* ---------- Scroll rail（先を行く点と、後ろからついていく点） ---------- */
+.rail{position:fixed;right:22px;top:22vh;bottom:22vh;width:12px;z-index:90;pointer-events:none}
+.rail-line{position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(154,163,168,.28);transform:translateX(-50%)}
+.rail-trace{position:absolute;left:50%;top:0;width:1px;height:0;background:var(--trace);transform:translateX(-50%)}
+.rail-dot{position:absolute;left:50%;width:9px;height:9px;border-radius:50%;transform:translate(-50%,-50%);top:0}
+.rail-lead{background:var(--on-dark);box-shadow:0 0 0 3px rgba(29,39,51,.6)}
+.rail-follow{background:var(--trace);box-shadow:0 0 0 3px rgba(29,39,51,.6)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:100svh;overflow:hidden;background:var(--ink);isolation:isolate}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.hero-inner{
+  position:relative;min-height:100svh;width:var(--wrap);margin-inline:auto;
+  display:grid;grid-template-columns:1fr auto;align-items:center;
+  padding:calc(var(--header-h) + 2rem) 0 4rem;
+}
+.hero-title{
+  font-family:var(--serif);font-weight:500;
+  writing-mode:vertical-rl;text-orientation:mixed;
+  font-size:clamp(2.4rem,4.8vw,4.4rem);letter-spacing:.24em;line-height:1.7;
+  justify-self:end;margin-right:clamp(0rem,6vw,5rem);
+}
+.hero-title .line{display:block}
+.hero-title .line + .line{margin-top:3.2em}
+.hero-lede{align-self:end;max-width:26rem;grid-column:1;grid-row:1}
+.hero-lede p{font-size:.95rem;color:var(--on-dark-mute);line-height:2.1}
+.hero-lede .biz{
+  display:inline-block;margin-bottom:1.4rem;padding-bottom:.6rem;
+  font-family:var(--serif);font-size:1.02rem;color:var(--on-dark);letter-spacing:.14em;
+  border-bottom:1px solid var(--trace);
+}
+.hero-load .hero-title .line,.hero-load .hero-lede{opacity:0;transform:translateY(12px)}
+.hero-ready .hero-title .line,.hero-ready .hero-lede{opacity:1;transform:none;transition:opacity 1.6s ease, transform 1.6s ease}
+.hero-ready .hero-title .line + .line{transition-delay:.7s}
+.hero-ready .hero-lede{transition-delay:1.4s}
+
+/* ---------- Section commons ---------- */
+.sec{padding:clamp(5rem,11vw,9rem) 0}
+.sec-light{background:var(--paper);color:var(--on-light)}
+.sec-light .mute{color:var(--on-light-mute)}
+.sec-head{margin-bottom:clamp(2.5rem,6vw,4.5rem)}
+.sec-title{font-family:var(--serif);font-weight:500;font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.6;letter-spacing:.12em}
+.sec-sub{margin-top:1rem;max-width:36rem;color:var(--on-dark-mute)}
+.sec-light .sec-sub{color:var(--on-light-mute)}
+
+.reveal{opacity:0;transition:opacity 1.2s ease}
+.reveal.is-in{opacity:1}
+
+/* ---------- Concept：ふたつの「あと」 ---------- */
+.concept-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,7vw,7rem)}
+.aato{position:relative;z-index:1}
+.aato-kanji{
+  display:flex;align-items:flex-end;gap:1rem;
+  font-family:var(--serif);font-weight:500;line-height:1;
+}
+.aato-kanji b{font-weight:500;font-size:clamp(6rem,15vw,11rem);letter-spacing:0}
+.aato-kanji span{font-size:.95rem;letter-spacing:.3em;color:var(--trace-deep);padding-bottom:1.2rem;writing-mode:vertical-rl}
+.aato h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.15rem,1.8vw,1.35rem);letter-spacing:.1em;margin:1.8rem 0 1rem;line-height:1.7}
+.aato p{max-width:25rem;color:var(--on-light-mute);font-size:.95rem}
+.aato:nth-child(2){margin-top:clamp(4rem,12vw,10rem)}
+.concept-path{position:absolute;inset:0;width:100%;height:100%;z-index:0;overflow:visible;pointer-events:none}
+.concept-path path{fill:none;stroke:var(--trace-deep);stroke-width:1.2;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 3s cubic-bezier(.6,.1,.3,1) .3s}
+.concept-path circle{fill:var(--trace-deep);opacity:0;transition:opacity .8s ease 3.1s}
+.concept-grid.is-in .concept-path path{stroke-dashoffset:0}
+.concept-grid.is-in .concept-path circle{opacity:1}
+.concept-note{margin-top:clamp(3rem,7vw,5rem);font-family:var(--serif);font-size:clamp(1rem,1.6vw,1.2rem);letter-spacing:.1em;line-height:2.2;text-align:center}
+
+/* ---------- Services ---------- */
+.service-list{display:flex;flex-direction:column;gap:clamp(4rem,9vw,7rem)}
+.service{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(2rem,6vw,5rem);align-items:center}
+.service:nth-child(even) .service-photo{order:2}
+.service-photo{
+  position:relative;aspect-ratio:4/3;overflow:hidden;
+  background:linear-gradient(135deg,var(--ink-3),var(--ink-2) 55%,#2c4a4c);
+}
+.service-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.55) contrast(1.02) brightness(.88)}
+.service-body h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.3rem,2.2vw,1.65rem);letter-spacing:.1em;line-height:1.6}
+.service-kind{display:block;margin-top:.5rem;font-size:.84rem;color:var(--trace);letter-spacing:.1em}
+.service-body p{margin-top:1.4rem;color:var(--on-dark-mute);max-width:28rem;font-size:.95rem}
+.service-body ul{margin-top:1.4rem;display:flex;flex-wrap:wrap;gap:.5rem}
+.service-body li{font-size:.8rem;letter-spacing:.08em;padding:.25rem .8rem;border:1px solid rgba(127,167,163,.45);border-radius:999px;color:var(--on-dark)}
+.for-whom{margin-top:clamp(4rem,8vw,6rem);padding-top:2rem;border-top:1px solid rgba(154,163,168,.2);display:flex;gap:2rem;align-items:baseline;flex-wrap:wrap}
+.for-whom dt{font-family:var(--serif);letter-spacing:.14em}
+.for-whom dd{color:var(--on-dark-mute);font-size:.95rem}
+
+/* ---------- Process ---------- */
+.process{background:var(--ink-2)}
+.steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;counter-reset:step}
+.steps::before{
+  content:"";position:absolute;left:0;right:0;top:7px;height:1px;background:var(--trace);
+  transform:scaleX(0);transform-origin:left;transition:transform 2.6s cubic-bezier(.6,.1,.3,1);
+}
+.steps.is-in::before{transform:scaleX(1)}
+.step{position:relative;padding-top:2.6rem}
+.step::before{
+  content:"";position:absolute;left:0;top:0;width:15px;height:15px;border-radius:50%;
+  background:var(--ink-2);border:1px solid var(--trace);
+}
+.step:last-child::before{border-style:dashed;border-color:var(--on-dark-mute)}
+.step-no{font-family:var(--latin);font-size:1.5rem;color:var(--trace);line-height:1}
+.step h3{font-family:var(--serif);font-weight:500;font-size:1.3rem;letter-spacing:.16em;margin:.8rem 0 .9rem}
+.step p{font-size:.9rem;color:var(--on-dark-mute);line-height:2}
+
+/* ---------- Photo band ---------- */
+.band{position:relative;min-height:min(78vh,640px);display:grid;place-items:center;overflow:hidden;background:linear-gradient(160deg,#2a3746,#1d2733 60%,#2d4a4a)}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.4) brightness(.55)}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(29,39,51,.35),rgba(29,39,51,.7))}
+.band p{position:relative;z-index:1;font-family:var(--serif);font-size:clamp(1.4rem,3.2vw,2.4rem);letter-spacing:.2em;line-height:1.9;text-align:center;padding:0 1.5rem}
+
+/* ---------- Message ---------- */
+.message-grid{display:grid;grid-template-columns:auto 1fr;gap:clamp(2rem,6vw,6rem);align-items:start}
+.message-head .sec-title{writing-mode:vertical-rl;letter-spacing:.3em}
+.message-body{
+  writing-mode:vertical-rl;text-orientation:mixed;
+  height:30rem;max-width:100%;overflow-x:auto;overflow-y:hidden;
+  font-family:var(--serif);font-size:1.02rem;line-height:2.5;letter-spacing:.14em;
+  padding-bottom:1rem;justify-self:end;
+}
+.message-body p + p{margin-right:1.6em}
+.message-body .lead{font-size:1.35rem;letter-spacing:.2em}
+.message-body .signature{margin-right:3em;text-align:end;font-size:.95rem}
+.signature .role{display:block}
+.signature .role{font-family:var(--sans);font-size:.82rem;color:var(--on-light-mute);letter-spacing:.14em}
+.signature .name{display:block;font-size:1.4rem;letter-spacing:.4em;margin-top:.8em}
+
+/* ---------- Company ---------- */
+.company{background:var(--paper-2);color:var(--on-light)}
+.company-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:clamp(2rem,6vw,5rem);align-items:start}
+.company-photo{aspect-ratio:3/4;overflow:hidden;background:linear-gradient(160deg,#c9cfc8,#aab5b1)}
+.company-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.5)}
+.profile{border-top:1px solid rgba(31,40,48,.25)}
+.profile div{display:grid;grid-template-columns:8rem 1fr;gap:1.5rem;padding:1.4rem 0;border-bottom:1px solid rgba(31,40,48,.14)}
+.profile dt{font-size:.88rem;letter-spacing:.14em;color:var(--on-light-mute)}
+.profile dd{font-size:.98rem}
+
+/* ---------- Footer ---------- */
+.site-footer{padding:4rem 0 3rem;background:var(--ink)}
+.site-footer .wrap{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap}
+.site-footer .brand-ja{font-size:1.1rem}
+.site-footer small{color:var(--on-dark-mute);font-size:.78rem;letter-spacing:.08em}
+.to-top{text-decoration:none;font-size:.82rem;letter-spacing:.14em;color:var(--on-dark-mute)}
+.to-top:hover{color:var(--on-dark)}
+
+/* ---------- Responsive ---------- */
+@media (max-width:960px){
+  .steps{grid-template-columns:1fr 1fr;row-gap:3rem}
+  .steps::before{display:none}
+  .company-grid{grid-template-columns:1fr}
+  .company-photo{aspect-ratio:16/9}
+}
+@media (max-width:820px){
+  :root{--header-h:64px}
+  .menu-btn{display:block}
+  .gnav{
+    position:fixed;inset:var(--header-h) 0 auto 0;background:var(--ink);
+    height:calc(100svh - var(--header-h));
+    opacity:0;visibility:hidden;transition:opacity .35s ease, visibility .35s ease;
+  }
+  .gnav.is-open{opacity:1;visibility:visible}
+  .gnav ul{flex-direction:column;gap:0;padding:2rem 1.5rem}
+  .gnav a{display:block;font-family:var(--serif);font-size:1.2rem;padding:1.1rem 0;border-bottom:1px solid rgba(154,163,168,.15)}
+  .gnav a::after{display:none}
+  .rail{display:none}
+
+  .hero-inner{grid-template-columns:1fr;align-content:end;gap:3rem;padding-bottom:3.5rem}
+  .hero-title{writing-mode:horizontal-tb;justify-self:start;margin:0;font-size:clamp(2rem,8.4vw,2.8rem);letter-spacing:.14em;line-height:1.6}
+  .hero-title .line + .line{margin-top:.2em}
+  .hero-lede{grid-row:auto}
+
+  .concept-grid{grid-template-columns:1fr;gap:4rem}
+  .aato:nth-child(2){margin-top:0}
+  .concept-path{display:none}
+  .concept-note{text-align:left}
+
+  .service{grid-template-columns:1fr}
+  .service:nth-child(even) .service-photo{order:0}
+
+  .message-grid{grid-template-columns:1fr}
+  .message-head .sec-title{writing-mode:horizontal-tb;letter-spacing:.12em}
+  .message-body{writing-mode:horizontal-tb;height:auto;overflow:visible;line-height:2.2;letter-spacing:.06em;justify-self:stretch}
+  .message-body p + p{margin-right:0;margin-top:1.4em}
+  .message-body .signature{margin:2.4rem 0 0}
+}
+@media (max-width:560px){
+  .steps{grid-template-columns:1fr}
+  .profile div{grid-template-columns:1fr;gap:.3rem}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.01ms !important;transition-delay:0s !important;animation:none !important}
+  .reveal{opacity:1}
+  .concept-path path{stroke-dashoffset:0}
+  .concept-path circle{opacity:1}
+  .steps::before{transform:scaleX(1)}
+}
+</style>
+</head>
+
+<body class="hero-load">
+<a class="skip" href="#main">本文へスキップ</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="合同会社アトナサポート トップへ">
+      <span class="brand-ja"><small>合同会社</small>アトナサポート</span>
+      <span class="brand-en" lang="en">Atona Support</span>
+      <!-- 要確認：英字表記 -->
+    </a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="gnav">
+      <span></span><span></span><span class="sr-only">メニューを開く</span>
+    </button>
+    <nav class="gnav" id="gnav" aria-label="メインメニュー">
+      <ul>
+        <li><a href="#about">アトナについて</a></li>
+        <li><a href="#services">支援内容</a></li>
+        <li><a href="#process">進め方</a></li>
+        <li><a href="#message">代表メッセージ</a></li>
+        <li><a href="#company">会社概要</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="rail" aria-hidden="true">
+  <div class="rail-line"></div>
+  <div class="rail-trace" id="railTrace"></div>
+  <div class="rail-dot rail-lead" id="railLead"></div>
+  <div class="rail-dot rail-follow" id="railFollow"></div>
+</div>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top" aria-labelledby="heroTitle">
+    <canvas id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="hero-inner">
+      <h1 class="hero-title" id="heroTitle">
+        <span class="line">後ろに立ち、</span>
+        <span class="line">跡をのこす。</span>
+      </h1>
+      <div class="hero-lede">
+        <span class="biz">経営コンサルティング</span>
+        <p>合同会社アトナサポートは、<span class="nw">中小企業と個人事業主の</span><span class="nw">経営を支える</span><span class="nw">コンサルティング会社です。</span></p>
+        <!-- 要確認：主な支援対象（中小企業・個人事業主と想定） -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONCEPT ============ -->
+  <section class="sec sec-light" id="about" aria-labelledby="aboutTitle">
+    <!-- 要確認：社名「アトナ」の由来。以下の「後／跡」は制作側の解釈による提案です -->
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 class="sec-title" id="aboutTitle"><span class="nw">アトナという名前に、</span><span class="nw">ふたつの「あと」を</span><span class="nw">込めています。</span></h2>
+      </div>
+
+      <div class="concept-grid" id="conceptGrid">
+        <svg class="concept-path" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true">
+          <path pathLength="1" d="M 90 250 C 220 420, 360 520, 520 470 S 760 330, 880 520"/>
+          <circle cx="880" cy="520" r="5"/>
+        </svg>
+
+        <article class="aato">
+          <div class="aato-kanji" aria-hidden="true"><b>後</b><span>あと</span></div>
+          <h3>前ではなく、後ろに立つ。</h3>
+          <p>事業を決めるのは、経営者ご自身です。私たちは答えを押しつけるのではなく、判断を支える位置に立ち、考えを整理し、次の一歩を後ろから押します。</p>
+        </article>
+
+        <article class="aato">
+          <div class="aato-kanji" aria-hidden="true"><b>跡</b><span>あと</span></div>
+          <h3>離れたあとに、残るものを。</h3>
+          <p>支援が終わったあとに、何が事業の中に残っているか。数字の見方、判断の軸、日々回る仕組み。私たちがいなくなっても続くものを、会社の中に残します。</p>
+        </article>
+      </div>
+
+      <p class="concept-note reveal"><span class="nw">主役は、いつも事業の側にいる。</span><span class="nw">それがアトナサポートの立ち位置です。</span></p>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="sec" id="services" aria-labelledby="servicesTitle">
+    <!-- 要確認：支援内容の4項目は事業内容「コンサル業」から想定した構成です。実際の提供範囲に合わせて修正してください -->
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 class="sec-title" id="servicesTitle">支援内容</h2>
+        <p class="sec-sub">経営の方向づけから現場の仕組みづくりまで、会社の状況に合わせて必要なところを支援します。</p>
+      </div>
+
+      <div class="service-list">
+        <article class="service reveal">
+          <figure class="service-photo">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=70" alt="ホワイトボードの前で打ち合わせをする人々" loading="lazy" width="1200" height="900" onerror="this.remove()">
+          </figure>
+          <div class="service-body">
+            <h3>経営の方向を定める</h3>
+            <span class="service-kind">経営戦略・中期計画</span>
+            <p>会社がこれからどこへ向かうのかを、経営者と一緒に言葉にします。強みと課題を整理し、数年先までの道筋を描きます。</p>
+            <ul aria-label="主な内容"><li>現状分析</li><li>経営方針の整理</li><li>中期経営計画</li></ul>
+          </div>
+        </article>
+
+        <article class="service reveal">
+          <figure class="service-photo">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=70" alt="グラフが印刷された資料と電卓が置かれた机" loading="lazy" width="1200" height="900" onerror="this.remove()">
+          </figure>
+          <div class="service-body">
+            <h3>事業計画と数字を整える</h3>
+            <span class="service-kind">事業計画・収支計画・資金計画</span>
+            <p>売上と利益、資金の流れを見える形にします。金融機関との対話にも使える計画書づくりを支援し、数字で判断できる状態をつくります。</p>
+            <!-- 要確認：補助金・助成金の申請書類の作成代行を行う場合は行政書士法の範囲に注意。助言のみか、提携先を置くかを確認 -->
+            <ul aria-label="主な内容"><li>事業計画書</li><li>収支シミュレーション</li><li>資金繰り表</li></ul>
+          </div>
+        </article>
+
+        <article class="service reveal">
+          <figure class="service-photo">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=70" alt="ノートパソコンを囲んで作業をするチーム" loading="lazy" width="1200" height="900" onerror="this.remove()">
+          </figure>
+          <div class="service-body">
+            <h3>現場の仕組みを整える</h3>
+            <span class="service-kind">業務改善・組織づくり</span>
+            <p>人に頼りきった業務や、属人化した判断をほどき、誰が担当しても回る流れに組み直します。目標と指標を決め、振り返りの習慣まで定着させます。</p>
+            <ul aria-label="主な内容"><li>業務フローの見直し</li><li>目標と指標の設計</li><li>会議の運営改善</li></ul>
+          </div>
+        </article>
+
+        <article class="service reveal">
+          <figure class="service-photo">
+            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=70" alt="ノートに考えを書き出している手元" loading="lazy" width="1200" height="900" onerror="this.remove()">
+          </figure>
+          <div class="service-body">
+            <h3>新しい柱を育てる</h3>
+            <span class="service-kind">新規事業・販路開拓</span>
+            <p>既存事業の次の柱をどう立てるか。市場と顧客を確かめながら、小さく試して育てる進め方を一緒に考えます。</p>
+            <ul aria-label="主な内容"><li>新規事業の構想</li><li>顧客・市場の検証</li><li>販路の見直し</li></ul>
+          </div>
+        </article>
+      </div>
+
+      <dl class="for-whom reveal">
+        <dt>こんな方へ</dt>
+        <dd>事業の次の一手に迷っている経営者、数字をもとに判断したい方、社内に相談相手がいない個人事業主の方。</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="sec process" id="process" aria-labelledby="processTitle">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 class="sec-title" id="processTitle">進め方</h2>
+        <p class="sec-sub">最後は手を離すところまでを、支援の範囲と考えています。</p>
+      </div>
+      <!-- 要確認：支援の流れ（期間・契約形態などを追記する場合はここへ） -->
+      <ol class="steps" id="steps">
+        <li class="step">
+          <span class="step-no" aria-hidden="true">01</span>
+          <h3>聴く</h3>
+          <p>数字と現場、そして経営者の考えを聴くところから始めます。まだ言葉になっていない課題を、一緒に言葉にします。</p>
+        </li>
+        <li class="step">
+          <span class="step-no" aria-hidden="true">02</span>
+          <h3>整える</h3>
+          <p>課題に優先順位をつけ、計画と数字を整えます。何から手をつけるべきかが見える状態をつくります。</p>
+        </li>
+        <li class="step">
+          <span class="step-no" aria-hidden="true">03</span>
+          <h3>共に動く</h3>
+          <p>計画を現場で動かします。会議への同席や進み具合の確認を通じて、実行の後ろに立ち続けます。</p>
+        </li>
+        <li class="step">
+          <span class="step-no" aria-hidden="true">04</span>
+          <h3>手を離す</h3>
+          <p>社内で回る仕組みになったら、少しずつ手を離します。残るのは、自分たちで判断できる力です。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ PHOTO BAND ============ -->
+  <section class="band" aria-label="理念">
+    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=70" alt="" loading="lazy" width="2000" height="1333" onerror="this.remove()">
+    <p class="reveal"><span class="nw">答えを渡すより、</span><br><span class="nw">答えを出せる会社に。</span></p>
+  </section>
+
+  <!-- ============ MESSAGE ============ -->
+  <section class="sec sec-light" id="message" aria-labelledby="messageTitle">
+    <!-- 要確認：代表メッセージは下書きです。必ず外山様ご本人の確認・修正を経て公開してください -->
+    <!-- 要確認：肩書き（合同会社のため「代表社員」としています） -->
+    <div class="wrap message-grid">
+      <div class="message-head">
+        <h2 class="sec-title" id="messageTitle">代表メッセージ</h2>
+      </div>
+      <div class="message-body reveal" tabindex="0" aria-label="代表メッセージ本文">
+        <p class="lead">事業の主役は、<br>いつも経営者ご自身です。</p>
+        <p>外から来た者が前に立って答えを示せば、その場は早く進むかもしれません。けれど、その答えが会社の言葉になっていなければ、支援が終わったあとに続きません。</p>
+        <p>だから私たちは、後ろに立つことを選びました。考えを聴き、数字と仕組みを整え、実行を支える。そして最後は、手を離す。</p>
+        <p>私たちが去ったあとに、判断の軸と、日々回る仕組みが事業の中に残っていること。それを、アトナサポートの仕事の成果だと考えています。</p>
+        <p class="signature">
+          <span class="role">合同会社アトナサポート　代表社員</span>
+          <span class="name">外山 潔</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPANY ============ -->
+  <section class="sec company" id="company" aria-labelledby="companyTitle">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 class="sec-title" id="companyTitle">会社概要</h2>
+      </div>
+      <div class="company-grid">
+        <figure class="company-photo reveal">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=70" alt="見上げたオフィスビルの外観" loading="lazy" width="1000" height="1333" onerror="this.remove()">
+        </figure>
+        <dl class="profile reveal">
+          <div><dt>商号</dt><dd>合同会社アトナサポート</dd></div>
+          <div><dt>代表者</dt><dd>代表社員　外山 潔</dd></div>
+          <div><dt>所在地</dt><dd>〒103-0027<br>東京都中央区日本橋3丁目2番14号<br><span class="nw">新槇町ビル別館第一</span><span class="nw">1階</span></dd></div>
+          <div><dt>事業内容</dt><dd>経営コンサルティング業</dd></div>
+          <!-- 要確認：事業内容の正式な表記（登記上の目的に合わせるか） -->
+          <!-- 要確認：以下は未確認のため非表示にしています。確定後にコメントを外してください
+          <div><dt>設立</dt><dd></dd></div>
+          <div><dt>資本金</dt><dd></dd></div>
+          <div><dt>電話番号</dt><dd></dd></div>
+          <div><dt>営業時間</dt><dd></dd></div>
+          -->
+        </dl>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <p class="brand-ja"><small>合同会社</small>アトナサポート</p>
+      <small>&copy; <span id="year">2026</span> Atona Support LLC.</small>
+      <!-- 要確認：英文社名の表記 -->
+    </div>
+    <a class="to-top" href="#top">ページの先頭へ</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var body = document.body;
+
+  /* ---------- Hero load ---------- */
+  requestAnimationFrame(function(){
+    requestAnimationFrame(function(){ body.classList.add("hero-ready"); body.classList.remove("hero-load"); });
+  });
+
+  /* ---------- Year ---------- */
+  var y = document.getElementById("year");
+  if (y) y.textContent = new Date().getFullYear();
+
+  /* ---------- Header state ---------- */
+  var header = document.getElementById("siteHeader");
+  function onHeader(){ header.classList.toggle("is-scrolled", window.scrollY > 40); }
+  window.addEventListener("scroll", onHeader, {passive:true});
+  onHeader();
+
+  /* ---------- Mobile nav ---------- */
+  var btn = document.getElementById("menuBtn");
+  var nav = document.getElementById("gnav");
+  var btnLabel = btn.querySelector(".sr-only");
+  function setMenu(open){
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    nav.classList.toggle("is-open", open);
+    btnLabel.textContent = open ? "メニューを閉じる" : "メニューを開く";
+    body.style.overflow = open ? "hidden" : "";
+    if (open) header.classList.add("is-scrolled"); else onHeader();
+  }
+  btn.addEventListener("click", function(){ setMenu(btn.getAttribute("aria-expanded") !== "true"); });
+  nav.addEventListener("click", function(e){ if (e.target.closest("a")) setMenu(false); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape" && btn.getAttribute("aria-expanded") === "true"){ setMenu(false); btn.focus(); }
+  });
+  window.addEventListener("resize", function(){ if (window.innerWidth > 820 && nav.classList.contains("is-open")) setMenu(false); });
+
+  /* ---------- Reveal ---------- */
+  var targets = document.querySelectorAll(".reveal, #conceptGrid, #steps");
+  if ("IntersectionObserver" in window && !reduced){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ en.target.classList.add("is-in"); io.unobserve(en.target); }
+      });
+    }, {rootMargin:"0px 0px -12% 0px", threshold:0.12});
+    targets.forEach(function(t){ io.observe(t); });
+  } else {
+    targets.forEach(function(t){ t.classList.add("is-in"); });
+  }
+
+  /* ---------- Scroll rail：先を行く点と、後からついていく点 ---------- */
+  var lead = document.getElementById("railLead");
+  var follow = document.getElementById("railFollow");
+  var trace = document.getElementById("railTrace");
+  var target = 0, follower = 0, railRunning = false;
+  function progress(){
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    return max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+  }
+  function paintRail(){
+    lead.style.top = (target * 100) + "%";
+    follow.style.top = (follower * 100) + "%";
+    trace.style.height = (follower * 100) + "%";
+  }
+  function railLoop(){
+    follower += (target - follower) * 0.06;
+    if (Math.abs(target - follower) < 0.0005){ follower = target; railRunning = false; paintRail(); return; }
+    paintRail();
+    requestAnimationFrame(railLoop);
+  }
+  function onRail(){
+    target = progress();
+    if (reduced){ follower = target; paintRail(); return; }
+    if (!railRunning){ railRunning = true; requestAnimationFrame(railLoop); }
+  }
+  window.addEventListener("scroll", onRail, {passive:true});
+  window.addEventListener("resize", onRail);
+  onRail();
+
+  /* ---------- Hero canvas：先を行く線と、少し遅れてなぞる線 ---------- */
+  var cv = document.getElementById("heroCanvas");
+  var ctx = cv.getContext("2d");
+  var W = 0, H = 0, dpr = 1;
+  var BG = "29,39,51";
+  var DELAY = 46; /* 後ろの線が遅れるフレーム数 */
+  var pairs = [];
+
+  function resize(){
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.fillStyle = "rgb(" + BG + ")"; ctx.fillRect(0,0,W,H);
+  }
+  function makePair(i){
+    return {
+      x: Math.random() * W, y: H * (0.2 + Math.random() * 0.6),
+      a: Math.random() * Math.PI * 2,
+      v: 0.55 + Math.random() * 0.35,
+      seed: Math.random() * 1000 + i * 97,
+      hist: []
+    };
+  }
+  function init(){
+    var n = W < 700 ? 2 : 3;
+    pairs = [];
+    for (var i = 0; i < n; i++) pairs.push(makePair(i));
+  }
+  var t = 0;
+  function step(fade){
+    t += 1;
+    if (fade){ ctx.fillStyle = "rgba(" + BG + ",0.035)"; ctx.fillRect(0,0,W,H); }
+    ctx.lineCap = "round";
+    pairs.forEach(function(p){
+      p.a += Math.sin(t * 0.011 + p.seed) * 0.018 + Math.sin(t * 0.0047 + p.seed * 2) * 0.012;
+      var nx = p.x + Math.cos(p.a) * p.v;
+      var ny = p.y + Math.sin(p.a) * p.v;
+      var m = 40;
+      if (nx < -m || nx > W + m || ny < -m || ny > H + m){
+        var np = makePair(0); p.x = np.x; p.y = np.y; p.a = np.a; p.hist = [];
+        return;
+      }
+      /* 先を行く線 */
+      ctx.strokeStyle = "rgba(228,230,224,0.55)"; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(nx, ny); ctx.stroke();
+      p.hist.push([nx, ny]);
+      if (p.hist.length > DELAY + 2) p.hist.shift();
+      /* 後ろからなぞる線 */
+      if (p.hist.length > DELAY + 1){
+        var a = p.hist[0], b = p.hist[1];
+        ctx.strokeStyle = "rgba(127,167,163,0.85)"; ctx.lineWidth = 2.2;
+        ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
+      }
+      p.x = nx; p.y = ny;
+    });
+  }
+
+  var running = false, visible = true;
+  function loop(){
+    if (!running) return;
+    step(true); step(true);
+    requestAnimationFrame(loop);
+  }
+  function start(){ if (!running && visible && !reduced){ running = true; requestAnimationFrame(loop); } }
+  function stop(){ running = false; }
+
+  resize(); init();
+  if (reduced){
+    for (var k = 0; k < 900; k++) step(k > 820 ? false : true);
+  } else {
+    start();
+    if ("IntersectionObserver" in window){
+      new IntersectionObserver(function(en){
+        visible = en[0].isIntersecting;
+        visible ? start() : stop();
+      }).observe(cv);
+    }
+    document.addEventListener("visibilitychange", function(){ document.hidden ? stop() : start(); });
+  }
+  var rt;
+  window.addEventListener("resize", function(){
+    clearTimeout(rt);
+    rt = setTimeout(function(){
+      resize(); init();
+      if (reduced){ for (var k = 0; k < 900; k++) step(k <= 820); }
+    }, 200);
+  });
+})();
+</script>
+</body>
+</html>
